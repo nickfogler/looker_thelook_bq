@@ -32,4 +32,11 @@ view: inventory_items {
     type: count
     drill_fields: [id, products.item_name, products.id, order_items.count]
   }
+
+  measure: average_cost {
+    type: average
+    value_format_name: usd
+    sql: ${TABLE}.cost ;;
+
+  }
 }
